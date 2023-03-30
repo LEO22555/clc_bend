@@ -1,11 +1,10 @@
 //1. Crear un objeto express
 
 const express=require('express');
-
 //2. Crear un objeto que represente nuestra aplicacion
 
 const app = express();
-
+app.use(express.json());
 //3. Crear un servicio pàra escuchar peticiones
 
 app.listen(
@@ -26,14 +25,17 @@ app.get(
     (req, res)=>{
         // Aqui va el procesamiento de la petición a esta ruta
         console.log("Alguien está conectandose a esta ruta");
-        res.json("hola sumar");
+        res.json(req.body);
     }
 );
 
 app.post(
     '/restar',
     (req, res)=>{
-        console.log("Alguien está conectandose a la ruta restar");
-        res.json("hola restar");
+        const n1=req.body.numero_1;
+        const n2=req.body.numero_2;
+        const resultado = n1-n2
+        res.json(resultado);
     }
 );
+
