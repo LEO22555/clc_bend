@@ -8,22 +8,23 @@ const app = express();
 
 //3. Crear un servicio pàra escuchar peticiones
 
-// app.listen(
-//     3000,
-//     ()=>{
-//         console.log("Servidor ejecutandose en el puerto 3000");
-//     }
-// );
+app.listen(
+    3001,
+    ()=>{
+        console.log("Servidor ejecutandose en el puerto 3001");
+    }
+);
 
 //Definir los entry point de la API
 //Definir la ruta(url) en donde va a responder nuestra API
 // http://localhost:3000/ruta
 
-app.post(
-    'sumar'
-    {}=>{
+app.get(
+    '/sumar',
+    //Se requieren 2 objetos: uno representando la petición
+    //otro objeto representando la respuesta
+    (req, res)=>{
         // Aqui va el procesamiento de la petición a esta ruta
         console.log("Alguien está conectandose a esta ruta");
     }
-
-)
+);
