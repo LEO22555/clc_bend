@@ -26,5 +26,14 @@ app.get(
     (req, res)=>{
         // Aqui va el procesamiento de la petición a esta ruta
         console.log("Alguien está conectandose a esta ruta");
+        res.json("hola sumar");
+    }
+);
+
+app.post(
+    '/restar',
+    (req, res)=>{
+        console.log("Alguien está conectandose a la ruta restar");
+        res.json("hola restar");
     }
 );
